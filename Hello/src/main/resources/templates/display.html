@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<table>
+		<tr>
+			<th>ID</th>
+			<th>Name</th>
+			<th>Marks</th>	
+			<th>Actions</th>
+		</tr>
+		<tr th:each="stu:${students}">
+			<td th:text="${stu.id}"></td>
+			<td th:text="${stu.name}"></td>
+			<td th:text="${stu.marks}"></td>
+			<td>
+				<a th:href="@{/edit/{id}(id=${stu.id})}">Edit</a>
+			</td>
+			<td>
+				<a th:href="@{/delete/{id}(id=${stu.id})}">Delete</a>
+			</td>
+		</tr>
+	</table>
+	<h1><a href = "/mainpage.html">Go to mainpage</a></h1>
+</body>
+</html>
